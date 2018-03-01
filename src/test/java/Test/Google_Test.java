@@ -26,7 +26,7 @@ public class Google_Test {
 		String SorentoPrice=price.getText().replace("*", "");
 		System.out.println("Kia Sorento price is: " + SorentoPrice);
 		String actual=driver.getTitle();
-		String expected="2018 Sorento";
+		String expected="Sorento";
 		Assert.assertTrue(actual.contains(expected));
 		
 				
