@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,8 +24,11 @@ public class Google_Test {
 		driver.findElement(By.xpath("//div[@class='title' and contains(text(),'2018 Sorento')]")).click();
 		WebElement price=driver.findElement(By.className("chapter-header-value"));
 		String SorentoPrice=price.getText().replace("*", "");
+		String actual=driver.getTitle();
+		String expected="2018 Sorento";
+		Assert.assertTrue(actual.contains(expected));
 		
-				System.out.println(SorentoPrice);
+				System.out.println("Kia Sorento price is: "+SorentoPrice);
 		
 		
 	}
