@@ -24,11 +24,12 @@ public class Google_Test {
 		driver.findElement(By.xpath("//div[@class='title' and contains(text(),'2018 Sorento')]")).click();
 		WebElement price=driver.findElement(By.className("chapter-header-value"));
 		String SorentoPrice=price.getText().replace("*", "");
+		System.out.println("Kia Sorento price is: " + SorentoPrice);
 		String actual=driver.getTitle();
 		String expected="2018 Sorento";
 		Assert.assertTrue(actual.contains(expected));
 		
-				System.out.println("Kia Sorento price is: "+SorentoPrice);
+				
 		
 		
 	}
